@@ -1,0 +1,16 @@
+---
+applications:
+  - name: pcm-register-approuter
+    routes:
+      - route: approuter-pcm-register.cfapps.eu10.hana.ondemand.com
+    memory: 128M
+    disk_quota: 1024M
+    path: .
+    buildpack: nodejs_buildpack
+    env:
+      destinations: >
+        [
+          {"name":"frontend", "url" :"https://pcm_register.cfapps.eu10.hana.ondemand.com"}
+        ]
+    services:
+      - pcm-register-dest
